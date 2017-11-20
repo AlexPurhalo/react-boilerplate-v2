@@ -11,8 +11,9 @@ const password    = process.env.PG_USER_PASSWORD
 const schema_name = process.env.SCHEMA_NAME
 const db_name     = process.env.DB_NAME
 const hostname    = process.env.DB_HOSTNAME
+const db_port     = process.env.DB_PORT
 app.use(postgraphql(
-	`postgres://${username}:${password}@${hostname}:5432/${db_name}`,
+	`postgres://${username}:${password}@${hostname}:${db_port}/${db_name}`,
 	schema_name,
 	{ graphiql: true })
 )
