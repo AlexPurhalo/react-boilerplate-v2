@@ -1,3 +1,6 @@
+const webpack = require("webpack");
+require('dotenv').config();
+
 module.exports = {
 	entry: "./index.js",
 	output: {
@@ -15,5 +18,16 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new webpack.DefinePlugin({
+			process: {
+				env: {
+					NODE_ENV: `'${process.env.NODE_ENV}'`,
+					ENDPOINT_ADDRESS: `'${process.env.ENDPOINT_ADDRESS}'`
+				}
+			}
+		})
+	]
+	
 };

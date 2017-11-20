@@ -6,16 +6,23 @@
   "license": "ISC",
   "main": "bundle.js",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.1.1",
+    "apollo-client": "^2.0.3",
+    "apollo-client-preset": "^1.0.3",
+    "apollo-link-http": "^1.2.0",
     "babel-core": "^6.26.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-tag": "^2.5.0",
     "postgraphql": "^3.5.1",
     "react": "^16.1.1",
+    "react-apollo": "^2.0.1",
     "react-dom": "^16.1.1"
   },
   "scripts": {
     "postinstall": "webpack -p",
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "dev": "webpack-dev-server --watch",
     "test": "jest"
   },
